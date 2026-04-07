@@ -6,13 +6,13 @@
   --font-display: "Bebas Neue", sans-serif;
   --font-heading: "Space Grotesk", sans-serif;
 
-  --color-brand-bg: #0c1a2e;
-  --color-brand-bg-lighter: #111f33;
-  --color-brand-accent: #d4442a;
-  --color-brand-accent-hover: #ff6b4a;
-  --color-brand-gold: #c8a455;
+  --color-brand-bg: #1a1a1a;
+  --color-brand-bg-lighter: #2d231e;
+  --color-brand-accent: #b2c9c1;
+  --color-brand-accent-hover: #c5d9d2;
+  --color-brand-gold: #d2b49c;
   --color-brand-text: #f0ece4;
-  --color-brand-text-muted: #a8a196;
+  --color-brand-text-muted: #a89a8e;
 }
 
 @layer base {

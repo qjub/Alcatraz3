@@ -192,7 +192,7 @@ export default function App() {
       )}>
         <div className="container flex items-center justify-between">
           <a href="#" className="flex items-center gap-2">
-            <img src="/logo.png" alt="Alcatraz Logo" className="h-12 w-auto" />
+            <img src="logo.png" alt="Alcatraz Logo" className="h-12 w-auto" />
             <span className="font-display text-2xl tracking-wider hidden sm:block">ALCATRAZ</span>
           </a>
 
@@ -261,7 +261,7 @@ export default function App() {
       <section className="relative h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/hero_pozadie.jpg" 
+            src="hero_pozadie.jpg" 
             alt="Hero background" 
             className="w-full h-full object-cover opacity-60"
             referrerPolicy="no-referrer"
@@ -315,9 +315,9 @@ export default function App() {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "Smash Burgre", label: "Špeciality", img: "/burger.png", cat: "burgers" },
-              { title: "Pizza", label: "Talianska", img: "/Pizza.png", cat: "pizza" },
-              { title: "Šaláty & Poké", label: "Zdravo & Čerstvo", img: "/Poké.png", cat: "salads" }
+              { title: "Smash Burgre", label: "Špeciality", img: "burger.png", cat: "burgers" },
+              { title: "Pizza", label: "Talianska", img: "Pizza.png", cat: "pizza" },
+              { title: "Šaláty & Poké", label: "Zdravo & Čerstvo", img: "Poké.png", cat: "salads" }
             ].map((item, idx) => (
               <motion.div 
                 key={idx}
