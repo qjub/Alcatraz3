@@ -192,7 +192,7 @@ export default function App() {
       )}>
         <div className="container flex items-center justify-between">
           <a href="#" className="flex items-center gap-2">
-            <div className="w-12 h-12 bg-brand-accent rounded-xl flex items-center justify-center font-display text-2xl text-white shadow-lg shadow-brand-accent/20">A</div>
+            <img src="/logo.png" alt="Alcatraz Logo" className="h-12 w-auto" />
             <span className="font-display text-2xl tracking-wider hidden sm:block">ALCATRAZ</span>
           </a>
 
@@ -261,9 +261,9 @@ export default function App() {
       <section className="relative h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://picsum.photos/seed/burger/1920/1080" 
+            src="/hero_pozadie.jpg" 
             alt="Hero background" 
-            className="w-full h-full object-cover opacity-40"
+            className="w-full h-full object-cover opacity-60"
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-brand-bg via-brand-bg/80 to-transparent" />
@@ -315,9 +315,9 @@ export default function App() {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "Smash Burgre", label: "Špeciality", img: "https://picsum.photos/seed/burger2/800/600", cat: "burgers" },
-              { title: "Pizza", label: "Talianska", img: "https://picsum.photos/seed/pizza/800/600", cat: "pizza" },
-              { title: "Šaláty & Poké", label: "Zdravo & Čerstvo", img: "https://picsum.photos/seed/salad/800/600", cat: "salads" }
+              { title: "Smash Burgre", label: "Špeciality", img: "/burger.png", cat: "burgers" },
+              { title: "Pizza", label: "Talianska", img: "/Pizza.png", cat: "pizza" },
+              { title: "Šaláty & Poké", label: "Zdravo & Čerstvo", img: "/Poké.png", cat: "salads" }
             ].map((item, idx) => (
               <motion.div 
                 key={idx}
