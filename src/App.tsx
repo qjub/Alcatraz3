@@ -190,9 +190,9 @@ export default function App() {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4",
         isScrolled ? "glass py-2 shadow-xl" : "bg-transparent"
       )}>
-        <div className="container flex items-center justify-between">
+        <div className="container mx-auto flex items-center justify-between">
           <a href="#" className="flex items-center gap-2">
-            <img src="logo.png" alt="Alcatraz Logo" className="h-12 w-auto" />
+            <img src="/logo.png" alt="Alcatraz Logo" className="h-12 w-auto" />
             <span className="font-display text-2xl tracking-wider hidden sm:block">ALCATRAZ</span>
           </a>
 
@@ -261,7 +261,7 @@ export default function App() {
       <section className="relative h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="hero_pozadie.jpg" 
+            src="/hero_pozadie.webp" 
             alt="Hero background" 
             className="w-full h-full object-cover opacity-60"
             referrerPolicy="no-referrer"
@@ -270,7 +270,7 @@ export default function App() {
           <div className="absolute inset-0 bg-gradient-to-t from-brand-bg via-transparent to-transparent" />
         </div>
 
-        <div className="container relative z-10">
+        <div className="container mx-auto relative z-10">
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -312,12 +312,12 @@ export default function App() {
 
       {/* --- Showcase --- */}
       <section className="py-20 bg-brand-bg-lighter">
-        <div className="container">
+        <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "Smash Burgre", label: "Špeciality", img: "burger.png", cat: "burgers" },
-              { title: "Pizza", label: "Talianska", img: "Pizza.png", cat: "pizza" },
-              { title: "Šaláty & Poké", label: "Zdravo & Čerstvo", img: "Poké.png", cat: "salads" }
+              { title: "Smash Burgre", label: "Špeciality", img: "/burger.webp", cat: "burgers" },
+              { title: "Pizza", label: "Talianska", img: "/Pizza.webp", cat: "pizza" },
+              { title: "Šaláty & Poké", label: "Zdravo & Čerstvo", img: "/Poké.webp", cat: "salads" }
             ].map((item, idx) => (
               <motion.div 
                 key={idx}
@@ -347,7 +347,7 @@ export default function App() {
 
       {/* --- Lunch Combo --- */}
       <section id="obedové-menu" className="py-24 relative overflow-hidden">
-        <div className="container">
+        <div className="container mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
             <div>
               <div className="text-brand-accent text-sm font-bold uppercase tracking-[0.3em] mb-4">Denné menu</div>
@@ -417,7 +417,7 @@ export default function App() {
 
       {/* --- Menu --- */}
       <section id="menu" className="py-24 bg-brand-bg-lighter">
-        <div className="container">
+        <div className="container mx-auto">
           <div className="text-center mb-16">
             <div className="text-brand-accent text-sm font-bold uppercase tracking-[0.3em] mb-4">Naše menu</div>
             <h2 className="text-5xl md:text-7xl mb-6">ČO U NÁS DOSTANETE</h2>
@@ -487,7 +487,7 @@ export default function App() {
 
       {/* --- Why Us --- */}
       <section id="prečo-my" className="py-24">
-        <div className="container">
+        <div className="container mx-auto">
           <div className="text-center mb-16">
             <div className="text-brand-accent text-sm font-bold uppercase tracking-[0.3em] mb-4">Prečo my</div>
             <h2 className="text-5xl md:text-7xl mb-6">ČO NÁS ODLIŠUJE</h2>
@@ -518,7 +518,7 @@ export default function App() {
 
       {/* --- Location --- */}
       <section id="kde-sme" className="py-24 bg-brand-bg-lighter">
-        <div className="container">
+        <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div className="rounded-3xl overflow-hidden shadow-2xl h-[500px] border border-white/10">
               <iframe 
@@ -567,7 +567,7 @@ export default function App() {
 
       {/* --- Contact --- */}
       <section id="kontakt" className="py-24">
-        <div className="container">
+        <div className="container mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { label: "Telefón", val: "0902 669 123", href: "tel:+421902669123", icon: Phone },
@@ -595,7 +595,7 @@ export default function App() {
 
       {/* --- Footer --- */}
       <footer className="py-12 border-t border-white/5">
-        <div className="container flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="text-sm text-brand-text-muted">
             © 2026 Alcatraz Pizza & Burgers · Východná 2425/1, Trenčín
           </div>
