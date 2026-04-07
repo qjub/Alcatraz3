@@ -4,11 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alcatraz | Pizza & Burgers</title>
-    <!-- Build trigger for cache busting -->
+    <script>
+      // Jednoduchý lapač chýb pre mobil
+      window.onerror = function(msg, url, line, col, error) {
+        var debug = document.getElementById('debug-error');
+        if (debug) {
+          debug.style.display = 'block';
+          debug.innerHTML = 'Chyba: ' + msg + '<br>Riadok: ' + line;
+        }
+        return false;
+      };
+    </script>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <div id="debug-error" style="display:none; color:white; background:red; padding:10px; position:fixed; top:0; left:0; z-index:9999; width:100%; font-size:12px;"></div>
+    <div id="root">
+      <div style="display:flex; justify-content:center; align-items:center; height:100vh; background:#0a0a0a; color:white; font-family:sans-serif;">
+        Načítavam Alcatraz...
+      </div>
+    </div>
+    <script type="module" src="./src/main.tsx"></script>
   </body>
 </html>
 
