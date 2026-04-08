@@ -192,7 +192,7 @@ export default function App() {
       )}>
         <div className="container flex items-center justify-between">
           <a href="#" className="flex items-center gap-2">
-            <div className="w-12 h-12 bg-brand-accent rounded-full flex items-center justify-center font-display text-xl font-bold text-brand-bg">A</div>
+            <img src="logo.png" alt="Alcatraz Logo" className="h-12 w-auto" />
             <span className="font-display text-2xl tracking-wider hidden sm:block">ALCATRAZ</span>
           </a>
 
@@ -261,7 +261,7 @@ export default function App() {
       <section className="relative h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://picsum.photos/seed/restaurant/1920/1080" 
+            src="hero_pozadie.webp" 
             alt="Hero background" 
             className="w-full h-full object-cover opacity-60"
             referrerPolicy="no-referrer"
@@ -314,9 +314,9 @@ export default function App() {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "Smash Burgre", label: "Špeciality", img: "https://picsum.photos/seed/burger1/800/600", cat: "burgers" },
-              { title: "Pizza", label: "Talianska", img: "https://picsum.photos/seed/pizza1/800/600", cat: "pizza" },
-              { title: "Šaláty & Poké", label: "Zdravo & Čerstvo", img: "https://picsum.photos/seed/salad1/800/600", cat: "salads" }
+              { title: "Smash Burgre", label: "Špeciality", img: "burger.webp", cat: "burgers" },
+              { title: "Pizza", label: "Talianska", img: "Pizza.webp", cat: "pizza" },
+              { title: "Šaláty & Poké", label: "Zdravo & Čerstvo", img: "Poké.webp", cat: "salads" }
             ].map((item, idx) => (
               <motion.div 
                 key={idx}
@@ -600,9 +600,6 @@ export default function App() {
           <div className="flex flex-col items-center md:items-start gap-2">
             <div className="text-sm text-brand-text-muted">
               © 2026 Alcatraz Pizza & Burgers · Východná 2425/1, Trenčín
-            </div>
-            <div className="text-[10px] text-brand-accent/40 font-bold uppercase tracking-widest">
-              v2.1 - Centered Layout
             </div>
           </div>
           <div className="flex items-center gap-4">
