@@ -269,38 +269,38 @@ export default function App() {
           <div className="absolute inset-0 bg-gradient-to-b from-brand-bg/60 via-brand-bg/80 to-brand-bg" />
         </div>
 
-        <div className="container relative z-10 w-full flex flex-col items-center justify-center text-center">
+        <div className="container relative z-10 w-full flex flex-col items-center justify-center text-center mx-auto">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl w-full flex flex-col items-center mx-auto"
+            className="max-w-4xl w-full flex flex-col items-center justify-center mx-auto text-center"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-gold/30 bg-brand-gold/10 text-brand-gold text-xs font-bold uppercase tracking-widest mb-6">
+            <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full border border-brand-gold/30 bg-brand-gold/10 text-brand-gold text-xs font-bold uppercase tracking-widest mb-6 mx-auto">
               <Star className="w-3 h-3 fill-brand-gold" />
               Trenčín — Východná ulica
             </div>
-            <h1 className="text-5xl sm:text-7xl md:text-8xl mb-6 leading-[1.1] text-white text-center w-full">
+            <h1 className="text-5xl sm:text-7xl md:text-8xl mb-6 leading-[1.1] text-white text-center w-full block">
               POCTIVÉ <span className="text-brand-accent">BURGRE</span> <br />
               & TALIANSKA PIZZA
             </h1>
-            <p className="text-base sm:text-lg text-brand-text-muted mb-10 max-w-xl mx-auto leading-relaxed text-center">
+            <p className="text-base sm:text-lg text-brand-text-muted mb-10 max-w-xl mx-auto leading-relaxed text-center block">
               Smash burgre z čerstvého hovädzieho, pizza z vlastného cesta a šaláty. Na sídlisku Juh s parkovaním pri dverách.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center items-center mx-auto">
-              <a href="#menu" className="w-full sm:w-auto bg-brand-accent hover:bg-brand-accent-hover text-white px-10 py-4 rounded-xl font-bold text-lg transition-all hover-lift shadow-xl shadow-brand-accent/30 text-center">
+              <a href="#menu" className="w-full sm:min-w-[200px] bg-brand-accent hover:bg-brand-accent-hover text-white px-10 py-4 rounded-xl font-bold text-lg transition-all hover-lift shadow-xl shadow-brand-accent/30 text-center">
                 Pozrieť menu
               </a>
-              <a href="tel:+421902669123" className="w-full sm:w-auto border-2 border-white/20 hover:border-brand-gold hover:text-brand-gold text-white px-10 py-4 rounded-xl font-bold text-lg transition-all text-center">
+              <a href="tel:+421902669123" className="w-full sm:min-w-[200px] border-2 border-white/20 hover:border-brand-gold hover:text-brand-gold text-white px-10 py-4 rounded-xl font-bold text-lg transition-all text-center">
                 Objednať telefonicky
               </a>
             </div>
-            <div className="mt-12 flex flex-wrap justify-center items-center gap-6 text-sm text-brand-text-muted w-full">
-              <div className="flex items-center gap-2">
+            <div className="mt-12 flex flex-wrap justify-center items-center gap-6 text-sm text-brand-text-muted w-full text-center">
+              <div className="flex items-center justify-center gap-2">
                 <Clock className="w-4 h-4 text-brand-accent" />
                 Po – So: 12:00 – 22:00
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center justify-center gap-2">
                 <Clock className="w-4 h-4 text-brand-accent" />
                 Ne: 12:00 – 21:00
               </div>
@@ -597,8 +597,13 @@ export default function App() {
       {/* --- Footer --- */}
       <footer className="py-12 border-t border-white/5">
         <div className="container flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="text-sm text-brand-text-muted">
-            © 2026 Alcatraz Pizza & Burgers · Východná 2425/1, Trenčín
+          <div className="flex flex-col items-center md:items-start gap-2">
+            <div className="text-sm text-brand-text-muted">
+              © 2026 Alcatraz Pizza & Burgers · Východná 2425/1, Trenčín
+            </div>
+            <div className="text-[10px] text-brand-accent/40 font-bold uppercase tracking-widest">
+              v2.1 - Centered Layout
+            </div>
           </div>
           <div className="flex items-center gap-4">
             <a href="#" className="w-10 h-10 rounded-lg border border-white/5 flex items-center justify-center text-brand-text-muted hover:text-brand-accent hover:border-brand-accent transition-all">
