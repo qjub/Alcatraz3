@@ -5,25 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alcatraz | Pizza & Burgers</title>
     <script>
-      // Jednoduchý lapač chýb pre mobil
+      // Lapač chýb pri vykonávaní kódu
       window.onerror = function(msg, url, line, col, error) {
         var debug = document.getElementById('debug-error');
         if (debug) {
           debug.style.display = 'block';
-          debug.innerHTML = 'Chyba: ' + msg + '<br>Riadok: ' + line;
+          debug.innerHTML = 'Chyba kódu: ' + msg + '<br>Riadok: ' + line;
         }
         return false;
       };
+      // Lapač chýb pri načítavaní súborov (napr. 404)
+      window.addEventListener('error', function(e) {
+        if (e.target.tagName === 'SCRIPT') {
+          var debug = document.getElementById('debug-error');
+          if (debug) {
+            debug.style.display = 'block';
+            debug.innerHTML = 'Chyba siete: Nepodarilo sa načítať súbor: ' + e.target.src;
+          }
+        }
+      }, true);
     </script>
   </head>
   <body>
-    <div id="debug-error" style="display:none; color:white; background:red; padding:10px; position:fixed; top:0; left:0; z-index:9999; width:100%; font-size:12px;"></div>
+    <div id="debug-error" style="display:none; color:white; background:red; padding:10px; position:fixed; top:0; left:0; z-index:9999; width:100%; font-size:12px; word-break:break-all;"></div>
     <div id="root">
       <div style="display:flex; justify-content:center; align-items:center; height:100vh; background:#0a0a0a; color:white; font-family:sans-serif;">
         Načítavam Alcatraz...
       </div>
     </div>
-    <script type="module" src="./src/main.tsx"></script>
+    <script type="module" src="src/main.tsx"></script>
   </body>
 </html>
 
