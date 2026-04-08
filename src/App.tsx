@@ -190,7 +190,7 @@ export default function App() {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4",
         isScrolled ? "glass py-2 shadow-xl" : "bg-transparent"
       )}>
-        <div className="container flex items-center justify-between px-6">
+        <div className="container flex items-center justify-between">
           <a href="#" className="flex items-center gap-2">
             <div className="w-12 h-12 bg-brand-accent rounded-full flex items-center justify-center font-display text-xl font-bold text-brand-bg">A</div>
             <span className="font-display text-2xl tracking-wider hidden sm:block">ALCATRAZ</span>
@@ -269,25 +269,25 @@ export default function App() {
           <div className="absolute inset-0 bg-gradient-to-b from-brand-bg/60 via-brand-bg/80 to-brand-bg" />
         </div>
 
-        <div className="container relative z-10 w-full flex flex-col items-center justify-center text-center px-6">
+        <div className="container relative z-10 w-full flex flex-col items-center justify-center text-center">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl w-full flex flex-col items-center"
+            className="max-w-4xl w-full flex flex-col items-center mx-auto"
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-gold/30 bg-brand-gold/10 text-brand-gold text-xs font-bold uppercase tracking-widest mb-6">
               <Star className="w-3 h-3 fill-brand-gold" />
               Trenčín — Východná ulica
             </div>
-            <h1 className="text-5xl sm:text-7xl md:text-8xl mb-6 leading-[1.1] text-white text-center">
+            <h1 className="text-5xl sm:text-7xl md:text-8xl mb-6 leading-[1.1] text-white text-center w-full">
               POCTIVÉ <span className="text-brand-accent">BURGRE</span> <br />
               & TALIANSKA PIZZA
             </h1>
             <p className="text-base sm:text-lg text-brand-text-muted mb-10 max-w-xl mx-auto leading-relaxed text-center">
               Smash burgre z čerstvého hovädzieho, pizza z vlastného cesta a šaláty. Na sídlisku Juh s parkovaním pri dverách.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center items-center mx-auto">
               <a href="#menu" className="w-full sm:w-auto bg-brand-accent hover:bg-brand-accent-hover text-white px-10 py-4 rounded-xl font-bold text-lg transition-all hover-lift shadow-xl shadow-brand-accent/30 text-center">
                 Pozrieť menu
               </a>
@@ -295,7 +295,7 @@ export default function App() {
                 Objednať telefonicky
               </a>
             </div>
-            <div className="mt-12 flex flex-wrap justify-center items-center gap-6 text-sm text-brand-text-muted">
+            <div className="mt-12 flex flex-wrap justify-center items-center gap-6 text-sm text-brand-text-muted w-full">
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4 text-brand-accent" />
                 Po – So: 12:00 – 22:00
@@ -311,7 +311,7 @@ export default function App() {
 
       {/* --- Showcase --- */}
       <section className="py-20 bg-brand-bg-lighter">
-        <div className="container px-6">
+        <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { title: "Smash Burgre", label: "Špeciality", img: "https://picsum.photos/seed/burger1/800/600", cat: "burgers" },
@@ -346,8 +346,8 @@ export default function App() {
 
       {/* --- Lunch Combo --- */}
       <section id="obedové-menu" className="py-24 relative overflow-hidden">
-        <div className="container px-6">
-          <div className="flex flex-col items-center text-center gap-8 mb-16 px-4">
+        <div className="container">
+          <div className="flex flex-col items-center text-center gap-8 mb-16">
             <div className="w-full">
               <div className="text-brand-accent text-sm font-bold uppercase tracking-[0.3em] mb-4">Denné menu</div>
               <h2 className="text-5xl md:text-7xl">OBEDOVÉ <span className="text-brand-gold">COMBO</span></h2>
@@ -418,8 +418,8 @@ export default function App() {
 
       {/* --- Menu --- */}
       <section id="menu" className="py-24 bg-brand-bg-lighter">
-        <div className="container px-6">
-          <div className="text-center mb-16 px-4">
+        <div className="container">
+          <div className="text-center mb-16">
             <div className="text-brand-accent text-sm font-bold uppercase tracking-[0.3em] mb-4">Naše menu</div>
             <h2 className="text-5xl md:text-7xl mb-6">ČO U NÁS DOSTANETE</h2>
             <p className="text-brand-text-muted max-w-xl mx-auto text-center">
@@ -488,7 +488,7 @@ export default function App() {
 
       {/* --- Why Us --- */}
       <section id="prečo-my" className="py-24">
-        <div className="container px-6">
+        <div className="container">
           <div className="text-center mb-16 px-4">
             <div className="text-brand-accent text-sm font-bold uppercase tracking-[0.3em] mb-4">Prečo my</div>
             <h2 className="text-5xl md:text-7xl mb-6">ČO NÁS ODLIŠUJE</h2>
@@ -519,7 +519,7 @@ export default function App() {
 
       {/* --- Location --- */}
       <section id="kde-sme" className="py-24 bg-brand-bg-lighter">
-        <div className="container px-6">
+        <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div className="rounded-3xl overflow-hidden shadow-2xl h-[500px] border border-white/10">
               <iframe 
@@ -568,7 +568,7 @@ export default function App() {
 
       {/* --- Contact --- */}
       <section id="kontakt" className="py-24">
-        <div className="container px-6">
+        <div className="container">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { label: "Telefón", val: "0902 669 123", href: "tel:+421902669123", icon: Phone },
@@ -596,7 +596,7 @@ export default function App() {
 
       {/* --- Footer --- */}
       <footer className="py-12 border-t border-white/5">
-        <div className="container px-6 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="container flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="text-sm text-brand-text-muted">
             © 2026 Alcatraz Pizza & Burgers · Východná 2425/1, Trenčín
           </div>
