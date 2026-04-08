@@ -140,7 +140,7 @@ export default function App() {
     }
     const itemsText = cart.map(i => `• ${i.name} x${i.quantity} — ${(i.price * i.quantity).toFixed(2)}€`).join("\n");
     const msg = `Dobrý deň, objednávka:\n\nMeno: ${form.name}\nTelefón: ${form.phone}\nAdresa: ${form.address || "osobný odber"}\nPoznámka: ${form.note}\n\n${itemsText}\n\nCelkom: ${cartTotal.toFixed(2)}€`;
-    window.open(`https://wa.me/421902669123?text=${encodeURIComponent(msg)}`, "_blank");
+    window.open(`https://wa.me/421908819197?text=${encodeURIComponent(msg)}`, "_blank");
   };
 
   const handleOrderEmail = async () => {
