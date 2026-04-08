@@ -140,7 +140,7 @@ export default function App() {
     }
     const itemsText = cart.map(i => `• ${i.name} x${i.quantity} — ${(i.price * i.quantity).toFixed(2)}€`).join("\n");
     const msg = `Dobrý deň, objednávka:\n\nMeno: ${form.name}\nTelefón: ${form.phone}\nAdresa: ${form.address || "osobný odber"}\nPoznámka: ${form.note}\n\n${itemsText}\n\nCelkom: ${cartTotal.toFixed(2)}€`;
-    window.open(`https://wa.me/421908819197?text=${encodeURIComponent(msg)}`, "_blank");
+    window.open(`https://wa.me/421902669123?text=${encodeURIComponent(msg)}`, "_blank");
   };
 
   const handleOrderEmail = async () => {
@@ -190,7 +190,7 @@ export default function App() {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4",
         isScrolled ? "glass py-2 shadow-xl" : "bg-transparent"
       )}>
-        <div className="container mx-auto flex items-center justify-between">
+        <div className="container flex items-center justify-between">
           <a href="#" className="flex items-center gap-2">
             <img src="logo.png" alt="Alcatraz Logo" className="h-12 w-auto" />
             <span className="font-display text-2xl tracking-wider hidden sm:block">ALCATRAZ</span>
@@ -266,16 +266,15 @@ export default function App() {
             className="w-full h-full object-cover opacity-60"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-bg via-brand-bg/80 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-brand-bg via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-brand-bg/60 via-brand-bg/80 to-brand-bg" />
         </div>
 
-        <div className="container mx-auto relative z-10">
+        <div className="container relative z-10 flex flex-col items-center text-center">
           <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-2xl"
+            className="max-w-3xl flex flex-col items-center"
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-gold/30 bg-brand-gold/10 text-brand-gold text-xs font-bold uppercase tracking-widest mb-6">
               <Star className="w-3 h-3 fill-brand-gold" />
@@ -288,15 +287,15 @@ export default function App() {
             <p className="text-lg text-brand-text-muted mb-10 max-w-lg leading-relaxed">
               Smash burgre z čerstvého hovädzieho, pizza z vlastného cesta a šaláty. Na sídlisku Juh s parkovaním pri dverách.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <a href="#menu" className="bg-brand-accent hover:bg-brand-accent-hover text-white px-8 py-4 rounded-xl font-bold text-lg transition-all hover-lift shadow-xl shadow-brand-accent/30">
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+              <a href="#menu" className="bg-brand-accent hover:bg-brand-accent-hover text-white px-8 py-4 rounded-xl font-bold text-lg transition-all hover-lift shadow-xl shadow-brand-accent/30 text-center">
                 Pozrieť menu
               </a>
-              <a href="tel:+421902669123" className="border-2 border-white/20 hover:border-brand-gold hover:text-brand-gold text-white px-8 py-4 rounded-xl font-bold text-lg transition-all">
+              <a href="tel:+421902669123" className="border-2 border-white/20 hover:border-brand-gold hover:text-brand-gold text-white px-8 py-4 rounded-xl font-bold text-lg transition-all text-center">
                 Objednať telefonicky
               </a>
             </div>
-            <div className="mt-12 flex items-center gap-6 text-sm text-brand-text-muted">
+            <div className="mt-12 flex flex-wrap justify-center gap-6 text-sm text-brand-text-muted">
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4 text-brand-accent" />
                 Po – So: 12:00 – 22:00
@@ -312,7 +311,7 @@ export default function App() {
 
       {/* --- Showcase --- */}
       <section className="py-20 bg-brand-bg-lighter">
-        <div className="container mx-auto">
+        <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { title: "Smash Burgre", label: "Špeciality", img: "burger.webp", cat: "burgers" },
@@ -347,24 +346,26 @@ export default function App() {
 
       {/* --- Lunch Combo --- */}
       <section id="obedové-menu" className="py-24 relative overflow-hidden">
-        <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+        <div className="container">
+          <div className="flex flex-col items-center text-center gap-8 mb-16">
             <div>
               <div className="text-brand-accent text-sm font-bold uppercase tracking-[0.3em] mb-4">Denné menu</div>
               <h2 className="text-5xl md:text-7xl">OBEDOVÉ <span className="text-brand-gold">COMBO</span></h2>
             </div>
             {comboInfo && (
-              <div className="flex flex-col items-start md:items-end gap-2">
-                <div className="text-5xl font-display text-brand-gold">{comboInfo.cena}</div>
-                <div className="flex items-center gap-2 text-brand-text-muted font-semibold">
-                  <Clock className="w-4 h-4" />
-                  {comboInfo.cas}
-                </div>
-                {comboInfo.pondelok && (
-                  <div className="text-brand-accent text-xs font-bold uppercase tracking-widest">
-                    Pondelok — {comboInfo.pondelok}
+              <div className="flex flex-col items-center gap-4">
+                <div className="text-6xl font-display text-brand-gold">{comboInfo.cena}</div>
+                <div className="flex flex-col items-center text-brand-text-muted">
+                  <div className="flex items-center gap-2 mb-1 font-semibold">
+                    <Clock className="w-4 h-4" />
+                    {comboInfo.cas}
                   </div>
-                )}
+                  {comboInfo.pondelok && (
+                    <div className="text-brand-accent text-xs font-bold uppercase tracking-widest opacity-70">
+                      Pondelok — {comboInfo.pondelok}
+                    </div>
+                  )}
+                </div>
               </div>
             )}
           </div>
@@ -417,7 +418,7 @@ export default function App() {
 
       {/* --- Menu --- */}
       <section id="menu" className="py-24 bg-brand-bg-lighter">
-        <div className="container mx-auto">
+        <div className="container">
           <div className="text-center mb-16">
             <div className="text-brand-accent text-sm font-bold uppercase tracking-[0.3em] mb-4">Naše menu</div>
             <h2 className="text-5xl md:text-7xl mb-6">ČO U NÁS DOSTANETE</h2>
@@ -487,7 +488,7 @@ export default function App() {
 
       {/* --- Why Us --- */}
       <section id="prečo-my" className="py-24">
-        <div className="container mx-auto">
+        <div className="container">
           <div className="text-center mb-16">
             <div className="text-brand-accent text-sm font-bold uppercase tracking-[0.3em] mb-4">Prečo my</div>
             <h2 className="text-5xl md:text-7xl mb-6">ČO NÁS ODLIŠUJE</h2>
@@ -518,7 +519,7 @@ export default function App() {
 
       {/* --- Location --- */}
       <section id="kde-sme" className="py-24 bg-brand-bg-lighter">
-        <div className="container mx-auto">
+        <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div className="rounded-3xl overflow-hidden shadow-2xl h-[500px] border border-white/10">
               <iframe 
@@ -567,7 +568,7 @@ export default function App() {
 
       {/* --- Contact --- */}
       <section id="kontakt" className="py-24">
-        <div className="container mx-auto">
+        <div className="container">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { label: "Telefón", val: "0902 669 123", href: "tel:+421902669123", icon: Phone },
@@ -595,7 +596,7 @@ export default function App() {
 
       {/* --- Footer --- */}
       <footer className="py-12 border-t border-white/5">
-        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="container flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="text-sm text-brand-text-muted">
             © 2026 Alcatraz Pizza & Burgers · Východná 2425/1, Trenčín
           </div>
