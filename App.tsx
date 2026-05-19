@@ -192,7 +192,7 @@ export default function App() {
       )}>
         <div className="container flex items-center justify-between">
           <a href="#" className="flex items-center gap-2">
-            <img src="logo.png" alt="Alcatraz Logo" className="h-12 w-auto" />
+            <img src="logo.png" alt="Alcatraz Logo" className="h-14 sm:h-12 w-auto" />
             <span className="font-display text-2xl tracking-wider hidden sm:block">ALCATRAZ</span>
           </a>
 
@@ -263,45 +263,48 @@ export default function App() {
           <img 
             src="hero_pozadie.webp" 
             alt="Hero background" 
-            className="w-full h-full object-cover opacity-60"
+            className="w-full h-full object-cover opacity-55"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-brand-bg/60 via-brand-bg/80 to-brand-bg" />
+          <div className="absolute inset-0 bg-gradient-to-b from-brand-bg/55 via-brand-bg/78 to-brand-bg" />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-bg/75 via-brand-bg/35 to-transparent" />
         </div>
 
-        <div className="container relative z-10 w-full flex flex-col items-center justify-center text-center mx-auto">
+        <div className="container relative z-10 w-full">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl w-full flex flex-col items-center justify-center mx-auto text-center"
+            className="w-full max-w-[680px] text-left"
           >
-            <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full border border-brand-gold/30 bg-brand-gold/10 text-brand-gold text-xs font-bold uppercase tracking-widest mb-6 mx-auto">
-              <Star className="w-3 h-3 fill-brand-gold" />
-              Trenčín — Východná ulica
+            <div className="inline-flex max-w-[92vw] items-center gap-2 rounded-full border border-brand-gold/30 bg-brand-bg-lighter/60 px-4 py-2 text-[11px] sm:text-xs font-bold uppercase tracking-[0.16em] text-brand-gold backdrop-blur mb-5 sm:mb-6">
+              <Star className="w-3 h-3 shrink-0 fill-brand-gold" />
+              <span className="truncate">Trenčín — Východná ulica</span>
             </div>
-            <h1 className="text-4xl sm:text-6xl md:text-8xl mb-5 sm:mb-6 leading-[1.05] text-white text-center w-full block">
-              POCTIVÉ <span className="text-brand-accent">BURGRE</span> <br />
-              & TALIANSKA PIZZA
+            <h1 className="max-w-full text-[clamp(3.05rem,14.5vw,4.85rem)] sm:text-6xl md:text-8xl mb-5 sm:mb-6 leading-[0.92] text-white tracking-wide break-normal">
+              POCTIVÉ <span className="text-brand-accent">BURGRE</span>
+              <br />
+              <span className="block whitespace-nowrap">&amp; TALIANSKA</span>
+              <span className="block">PIZZA</span>
             </h1>
-            <p className="text-sm sm:text-lg text-brand-text-muted mb-8 sm:mb-10 max-w-xl mx-auto leading-relaxed text-center block">
+            <p className="text-base sm:text-lg text-brand-text-muted mb-8 sm:mb-10 max-w-[34rem] leading-relaxed">
               Smash burgre z čerstvého hovädzieho, pizza z vlastného cesta a šaláty. Na sídlisku Juh s parkovaním pri dverách.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center items-center mx-auto">
-              <a href="#menu" className="w-full sm:min-w-[200px] bg-brand-accent hover:bg-brand-accent-hover text-white px-6 sm:px-10 py-3.5 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all hover-lift shadow-xl shadow-brand-accent/30 text-center">
+            <div className="flex flex-col sm:flex-row gap-4 w-full max-w-[360px] sm:max-w-none">
+              <a href="#menu" className="w-full sm:w-auto sm:min-w-[200px] bg-brand-accent hover:bg-brand-accent-hover text-white px-6 sm:px-10 py-4 rounded-xl font-bold text-base sm:text-lg transition-all hover-lift shadow-xl shadow-brand-accent/30 text-center">
                 Pozrieť menu
               </a>
-              <a href="tel:+421902669123" className="w-full sm:min-w-[200px] border-2 border-white/20 hover:border-brand-gold hover:text-brand-gold text-white px-6 sm:px-10 py-3.5 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all text-center">
+              <a href="tel:+421902669123" className="w-full sm:w-auto sm:min-w-[200px] border-2 border-white/20 hover:border-brand-gold hover:text-brand-gold text-white px-6 sm:px-10 py-4 rounded-xl font-bold text-base sm:text-lg transition-all text-center">
                 Objednať telefonicky
               </a>
             </div>
-            <div className="mt-10 sm:mt-12 flex flex-wrap justify-center items-center gap-4 sm:gap-6 text-xs sm:text-sm text-brand-text-muted w-full text-center">
-              <div className="flex items-center justify-center gap-2">
-                <Clock className="w-4 h-4 text-brand-accent" />
+            <div className="mt-10 sm:mt-12 flex flex-col sm:flex-row flex-wrap items-start gap-3 sm:gap-6 text-sm text-brand-text-muted">
+              <div className="flex items-center gap-2">
+                <Clock className="w-4 h-4 shrink-0 text-brand-accent" />
                 Po – So: 12:00 – 22:00
               </div>
-              <div className="flex items-center justify-center gap-2">
-                <Clock className="w-4 h-4 text-brand-accent" />
+              <div className="flex items-center gap-2">
+                <Clock className="w-4 h-4 shrink-0 text-brand-accent" />
                 Ne: 12:00 – 21:00
               </div>
             </div>
