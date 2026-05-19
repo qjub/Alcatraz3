@@ -275,16 +275,18 @@ export default function App() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="w-full max-w-[680px] text-left"
+            className="w-full max-w-[680px] text-left overflow-visible"
           >
             <div className="inline-flex max-w-[92vw] items-center gap-2 rounded-full border border-brand-gold/30 bg-brand-bg-lighter/60 px-4 py-2 text-[11px] sm:text-xs font-bold uppercase tracking-[0.16em] text-brand-gold backdrop-blur mb-5 sm:mb-6">
               <Star className="w-3 h-3 shrink-0 fill-brand-gold" />
               <span className="truncate">Trenčín — Východná ulica</span>
             </div>
-            <h1 className="max-w-full text-[clamp(3.05rem,14.5vw,4.85rem)] sm:text-6xl md:text-8xl mb-5 sm:mb-6 leading-[0.92] text-white tracking-wide break-normal">
-              POCTIVÉ <span className="text-brand-accent">BURGRE</span>
+            <h1 className="w-full max-w-[92vw] sm:max-w-[680px] mb-5 sm:mb-6 font-display text-[clamp(2.85rem,12.2vw,4rem)] sm:text-6xl md:text-8xl leading-[0.9] sm:leading-[0.92] text-white tracking-wide overflow-visible">
+              <span className="block sm:inline">POCTIVÉ</span>
+              <span className="hidden sm:inline"> </span>
+              <span className="block sm:inline text-brand-accent">BURGRE</span>
               <br />
-              <span className="block whitespace-nowrap">&amp; TALIANSKA</span>
+              <span className="block">&amp; TALIANSKA</span>
               <span className="block">PIZZA</span>
             </h1>
             <p className="text-base sm:text-lg text-brand-text-muted mb-8 sm:mb-10 max-w-[34rem] leading-relaxed">

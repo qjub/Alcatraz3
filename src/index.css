@@ -28,6 +28,7 @@
   body {
     @apply bg-brand-bg text-brand-text font-sans antialiased;
     overflow-x: hidden;
+    width: 100%;
   }
 
   #root {
