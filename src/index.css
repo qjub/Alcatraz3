@@ -16,22 +16,36 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-brand-bg text-brand-text font-sans antialiased;
+    overflow-x: hidden;
+  }
+
+  #root {
+    min-height: 100svh;
+    overflow-x: hidden;
   }
   
   h1, h2, h3, h4, .font-display {
     @apply font-display tracking-wide;
+  }
+
+  img, video, iframe {
+    max-width: 100%;
   }
 }
 
 @utility container {
   margin-inline: auto;
   width: 100%;
-  padding-inline: 2rem;
+  padding-inline: 1rem;
   
   @media (min-width: 640px) {
-    padding-inline: 2.5rem;
+    padding-inline: 1.5rem;
   }
   
   @media (min-width: 1024px) {

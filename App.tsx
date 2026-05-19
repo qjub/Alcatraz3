@@ -18,7 +18,7 @@ import {
   Send
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
-import { cn } from "./lib/utils";
+import { cn } from "./utils";
 import { MENU_ITEMS } from "./constants";
 import { MenuItem, CartItem, ComboItem, ComboInfo } from "./types";
 
@@ -234,21 +234,21 @@ export default function App() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 glass md:hidden flex flex-col items-center justify-center gap-8 pt-20"
+            className="fixed inset-0 z-40 glass md:hidden flex flex-col items-center justify-center gap-6 px-6 pt-20"
           >
             {["Obedové menu", "Menu", "Prečo my", "Kde sme", "Kontakt"].map((item) => (
               <a 
                 key={item}
                 href={`#${item.toLowerCase().replace(" ", "-")}`}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="font-display text-4xl tracking-widest text-brand-text hover:text-brand-accent transition-colors"
+                className="font-display text-3xl sm:text-4xl tracking-widest text-brand-text hover:text-brand-accent transition-colors"
               >
                 {item}
               </a>
             ))}
             <a 
               href="tel:+421902669123" 
-              className="flex items-center gap-3 bg-brand-accent text-white px-8 py-4 rounded-2xl font-bold text-lg"
+              className="flex items-center gap-3 bg-brand-accent text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl font-bold text-base sm:text-lg"
             >
               <Phone className="w-6 h-6" />
               0902 669 123
@@ -258,7 +258,7 @@ export default function App() {
       </AnimatePresence>
 
       {/* --- Hero --- */}
-      <section className="relative h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-[92svh] sm:min-h-screen flex items-center overflow-hidden py-24 sm:py-0">
         <div className="absolute inset-0 z-0">
           <img 
             src="hero_pozadie.webp" 
@@ -280,22 +280,22 @@ export default function App() {
               <Star className="w-3 h-3 fill-brand-gold" />
               Trenčín — Východná ulica
             </div>
-            <h1 className="text-5xl sm:text-7xl md:text-8xl mb-6 leading-[1.1] text-white text-center w-full block">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl mb-5 sm:mb-6 leading-[1.05] text-white text-center w-full block">
               POCTIVÉ <span className="text-brand-accent">BURGRE</span> <br />
               & TALIANSKA PIZZA
             </h1>
-            <p className="text-base sm:text-lg text-brand-text-muted mb-10 max-w-xl mx-auto leading-relaxed text-center block">
+            <p className="text-sm sm:text-lg text-brand-text-muted mb-8 sm:mb-10 max-w-xl mx-auto leading-relaxed text-center block">
               Smash burgre z čerstvého hovädzieho, pizza z vlastného cesta a šaláty. Na sídlisku Juh s parkovaním pri dverách.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center items-center mx-auto">
-              <a href="#menu" className="w-full sm:min-w-[200px] bg-brand-accent hover:bg-brand-accent-hover text-white px-10 py-4 rounded-xl font-bold text-lg transition-all hover-lift shadow-xl shadow-brand-accent/30 text-center">
+              <a href="#menu" className="w-full sm:min-w-[200px] bg-brand-accent hover:bg-brand-accent-hover text-white px-6 sm:px-10 py-3.5 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all hover-lift shadow-xl shadow-brand-accent/30 text-center">
                 Pozrieť menu
               </a>
-              <a href="tel:+421902669123" className="w-full sm:min-w-[200px] border-2 border-white/20 hover:border-brand-gold hover:text-brand-gold text-white px-10 py-4 rounded-xl font-bold text-lg transition-all text-center">
+              <a href="tel:+421902669123" className="w-full sm:min-w-[200px] border-2 border-white/20 hover:border-brand-gold hover:text-brand-gold text-white px-6 sm:px-10 py-3.5 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all text-center">
                 Objednať telefonicky
               </a>
             </div>
-            <div className="mt-12 flex flex-wrap justify-center items-center gap-6 text-sm text-brand-text-muted w-full text-center">
+            <div className="mt-10 sm:mt-12 flex flex-wrap justify-center items-center gap-4 sm:gap-6 text-xs sm:text-sm text-brand-text-muted w-full text-center">
               <div className="flex items-center justify-center gap-2">
                 <Clock className="w-4 h-4 text-brand-accent" />
                 Po – So: 12:00 – 22:00
@@ -310,9 +310,9 @@ export default function App() {
       </section>
 
       {/* --- Showcase --- */}
-      <section className="py-20 bg-brand-bg-lighter">
+      <section className="py-14 sm:py-20 bg-brand-bg-lighter">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8">
             {[
               { title: "Smash Burgre", label: "Špeciality", img: "burger.webp", cat: "burgers" },
               { title: "Pizza", label: "Talianska", img: "Pizza.webp", cat: "pizza" },
@@ -334,9 +334,9 @@ export default function App() {
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-bg via-transparent to-transparent opacity-80" />
-                <div className="absolute bottom-0 left-0 p-8">
+                <div className="absolute bottom-0 left-0 p-5 sm:p-8">
                   <div className="text-brand-accent text-xs font-bold uppercase tracking-widest mb-2">{item.label}</div>
-                  <h3 className="text-3xl text-white">{item.title}</h3>
+                  <h3 className="text-2xl sm:text-3xl text-white">{item.title}</h3>
                 </div>
               </motion.div>
             ))}
@@ -345,16 +345,16 @@ export default function App() {
       </section>
 
       {/* --- Lunch Combo --- */}
-      <section id="obedové-menu" className="py-24 relative overflow-hidden">
+      <section id="obedové-menu" className="py-16 sm:py-24 relative overflow-hidden">
         <div className="container">
-          <div className="flex flex-col items-center text-center gap-8 mb-16">
+          <div className="flex flex-col items-center text-center gap-6 sm:gap-8 mb-10 sm:mb-16">
             <div className="w-full">
               <div className="text-brand-accent text-sm font-bold uppercase tracking-[0.3em] mb-4">Denné menu</div>
-              <h2 className="text-5xl md:text-7xl">OBEDOVÉ <span className="text-brand-gold">COMBO</span></h2>
+              <h2 className="text-4xl sm:text-5xl md:text-7xl">OBEDOVÉ <span className="text-brand-gold">COMBO</span></h2>
             </div>
             {comboInfo && (
               <div className="flex flex-col items-center gap-4 w-full">
-                <div className="text-6xl font-display text-brand-gold">{comboInfo.cena}</div>
+                <div className="text-5xl sm:text-6xl font-display text-brand-gold">{comboInfo.cena}</div>
                 <div className="flex flex-col items-center text-brand-text-muted text-center">
                   <div className="flex items-center justify-center gap-2 mb-1 font-semibold">
                     <Clock className="w-4 h-4" />
@@ -371,13 +371,13 @@ export default function App() {
           </div>
 
           {isLoadingCombo ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
               {[1, 2, 3].map(i => (
                 <div key={i} className="h-40 bg-brand-bg-lighter rounded-2xl animate-pulse" />
               ))}
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
               {comboItems.map((item, idx) => (
                 <motion.div 
                   key={idx}
@@ -385,7 +385,7 @@ export default function App() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="p-6 bg-brand-bg-lighter rounded-2xl border border-white/5 hover:border-brand-gold/30 transition-all group"
+                  className="p-5 sm:p-6 bg-brand-bg-lighter rounded-2xl border border-white/5 hover:border-brand-gold/30 transition-all group"
                 >
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-full bg-brand-gold/10 text-brand-gold flex items-center justify-center font-display text-xl font-bold shrink-0">
@@ -417,17 +417,17 @@ export default function App() {
       </section>
 
       {/* --- Menu --- */}
-      <section id="menu" className="py-24 bg-brand-bg-lighter">
+      <section id="menu" className="py-16 sm:py-24 bg-brand-bg-lighter">
         <div className="container">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 sm:mb-16">
             <div className="text-brand-accent text-sm font-bold uppercase tracking-[0.3em] mb-4">Naše menu</div>
-            <h2 className="text-5xl md:text-7xl mb-6">ČO U NÁS DOSTANETE</h2>
+            <h2 className="text-4xl sm:text-5xl md:text-7xl mb-5 sm:mb-6">ČO U NÁS DOSTANETE</h2>
             <p className="text-brand-text-muted max-w-xl mx-auto text-center">
               Všetky burgre podávame s domácimi hranolkami. Alergény sú označené číslami pri každej položke.
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center items-center gap-3 mb-12 w-full max-w-2xl mx-auto px-4">
+          <div className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center items-center gap-3 mb-10 sm:mb-12 w-full max-w-2xl mx-auto">
             {[
               { id: "burgers", label: "Burgre" },
               { id: "pizza", label: "Pizza" },
@@ -438,7 +438,7 @@ export default function App() {
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id as any)}
                 className={cn(
-                  "flex-1 sm:flex-none min-w-[120px] px-6 py-3 rounded-xl font-bold text-sm uppercase tracking-widest transition-all",
+                  "w-full sm:w-auto px-4 sm:px-6 py-3 rounded-xl font-bold text-xs sm:text-sm uppercase tracking-widest transition-all",
                   activeCategory === cat.id 
                     ? "bg-brand-accent text-white shadow-lg shadow-brand-accent/20" 
                     : "bg-brand-bg text-brand-text-muted hover:text-brand-text border border-white/5"
@@ -456,10 +456,10 @@ export default function App() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: idx * 0.05 }}
-                className="p-8 bg-brand-bg hover:bg-brand-bg-lighter transition-colors flex flex-col sm:flex-row justify-between gap-6"
+                className="p-5 sm:p-8 bg-brand-bg hover:bg-brand-bg-lighter transition-colors flex flex-col sm:flex-row justify-between gap-5 sm:gap-6"
               >
                 <div className="flex-1">
-                  <h4 className="text-2xl mb-2">{item.name}</h4>
+                  <h4 className="text-xl sm:text-2xl mb-2 leading-tight">{item.name}</h4>
                   <p className="text-sm text-brand-text-muted leading-relaxed mb-2">
                     {item.description}
                   </p>
@@ -468,10 +468,10 @@ export default function App() {
                   </div>
                 </div>
                 <div className="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-4">
-                  <div className="text-2xl font-display text-brand-gold">{item.price.toFixed(2)}€</div>
+                  <div className="text-2xl sm:text-3xl font-display text-brand-gold">{item.price.toFixed(2)}€</div>
                   <button 
                     onClick={() => addToCart(item)}
-                    className="p-2 bg-brand-accent hover:bg-brand-accent-hover text-white rounded-lg transition-all hover-lift"
+                    className="p-3 sm:p-2 bg-brand-accent hover:bg-brand-accent-hover text-white rounded-lg transition-all hover-lift"
                   >
                     <Plus className="w-5 h-5" />
                   </button>
@@ -480,18 +480,18 @@ export default function App() {
             ))}
           </div>
 
-          <div className="mt-12 p-6 bg-brand-bg rounded-2xl border border-white/5 text-xs text-brand-text-muted leading-relaxed">
+          <div className="mt-10 sm:mt-12 p-5 sm:p-6 bg-brand-bg rounded-2xl border border-white/5 text-xs text-brand-text-muted leading-relaxed">
             <strong>Alergény:</strong> 1 Lepok · 2 Kôrovce · 3 Vajcia · 4 Ryby · 5 Arašidy · 6 Sója · 7 Mlieko · 8 Orechy · 9 Zeler · 10 Horčica · 11 Sezam · 12 Siričitany · 13 Vlčí bôb · 14 Mäkkýše · 15 Hríby · 16 Paradajky
           </div>
         </div>
       </section>
 
       {/* --- Why Us --- */}
-      <section id="prečo-my" className="py-24">
+      <section id="prečo-my" className="py-16 sm:py-24">
         <div className="container">
-          <div className="text-center mb-16 px-4">
+          <div className="text-center mb-10 sm:mb-16">
             <div className="text-brand-accent text-sm font-bold uppercase tracking-[0.3em] mb-4">Prečo my</div>
-            <h2 className="text-5xl md:text-7xl mb-6">ČO NÁS ODLIŠUJE</h2>
+            <h2 className="text-4xl sm:text-5xl md:text-7xl mb-5 sm:mb-6">ČO NÁS ODLIŠUJE</h2>
             <div className="flex items-center justify-center gap-2 text-brand-gold font-bold">
               <Star className="w-5 h-5 fill-brand-gold" />
               <span className="text-xl">4,5 ★ na Google z 928+ recenzií</span>
@@ -505,7 +505,7 @@ export default function App() {
               { title: "Parkovanie", desc: "Východná ulica, sídlisko Juh. Parkovisko priamo pred prevádzkou.", icon: MapPin },
               { title: "Rezervácie", desc: "Zavolajte nám a rezervujeme vám stôl na akýkoľvek deň a čas.", icon: Clock }
             ].map((feature, idx) => (
-              <div key={idx} className="p-8 bg-brand-bg-lighter rounded-3xl border border-white/5 hover:border-brand-accent/30 transition-all hover-lift">
+              <div key={idx} className="p-6 sm:p-8 bg-brand-bg-lighter rounded-3xl border border-white/5 hover:border-brand-accent/30 transition-all hover-lift">
                 <div className="w-12 h-12 bg-brand-accent/10 text-brand-accent rounded-xl flex items-center justify-center mb-6">
                   <feature.icon className="w-6 h-6" />
                 </div>
@@ -518,10 +518,10 @@ export default function App() {
       </section>
 
       {/* --- Location --- */}
-      <section id="kde-sme" className="py-24 bg-brand-bg-lighter">
+      <section id="kde-sme" className="py-16 sm:py-24 bg-brand-bg-lighter">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div className="rounded-3xl overflow-hidden shadow-2xl h-[500px] border border-white/10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-start">
+            <div className="rounded-3xl overflow-hidden shadow-2xl h-[320px] sm:h-[500px] border border-white/10">
               <iframe 
                 src="https://www.google.com/maps?q=Alcatraz+Pizza+and+Burgers,+Východná,+Trenčín&output=embed" 
                 className="w-full h-full grayscale invert opacity-80"
@@ -530,15 +530,15 @@ export default function App() {
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
-            <div className="p-10 bg-brand-bg rounded-3xl border border-white/5 shadow-xl">
-              <h3 className="text-4xl mb-8">OTVÁRACIE HODINY</h3>
-              <div className="space-y-4 mb-12">
+            <div className="p-6 sm:p-10 bg-brand-bg rounded-3xl border border-white/5 shadow-xl">
+              <h3 className="text-3xl sm:text-4xl mb-6 sm:mb-8">OTVÁRACIE HODINY</h3>
+              <div className="space-y-3 sm:space-y-4 mb-8 sm:mb-12">
                 {[
                   { day: "Pondelok – Sobota", time: "12:00 – 22:00" },
                   { day: "Nedeľa", time: "12:00 – 21:00" },
                   { day: "Kuchyňa v nedeľu", time: "do 20:30", highlight: true }
                 ].map((row, idx) => (
-                  <div key={idx} className="flex justify-between items-center py-3 border-bottom border-white/5">
+                  <div key={idx} className="flex justify-between items-center gap-4 py-3 border-b border-white/5">
                     <span className="text-brand-text-muted font-medium">{row.day}</span>
                     <span className={cn("font-display text-xl", row.highlight ? "text-brand-accent" : "text-brand-gold")}>{row.time}</span>
                   </div>
@@ -567,9 +567,9 @@ export default function App() {
       </section>
 
       {/* --- Contact --- */}
-      <section id="kontakt" className="py-24">
+      <section id="kontakt" className="py-16 sm:py-24">
         <div className="container">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
             {[
               { label: "Telefón", val: "0902 669 123", href: "tel:+421902669123", icon: Phone },
               { label: "Email", val: "alcatraz@alcatraz.sk", href: "mailto:alcatraz@alcatraz.sk", icon: Mail },
@@ -581,7 +581,7 @@ export default function App() {
                 href={item.href}
                 target={item.href.startsWith("http") ? "_blank" : undefined}
                 rel="noopener noreferrer"
-                className="p-8 bg-brand-bg-lighter rounded-3xl border border-white/5 hover:border-brand-accent/30 transition-all text-center group"
+                className="p-6 sm:p-8 bg-brand-bg-lighter rounded-3xl border border-white/5 hover:border-brand-accent/30 transition-all text-center group"
               >
                 <div className="w-14 h-14 bg-brand-accent/10 text-brand-accent rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                   <item.icon className="w-7 h-7" />
@@ -621,7 +621,7 @@ export default function App() {
             animate={{ scale: 1, y: 0 }}
             exit={{ scale: 0, y: 20 }}
             onClick={() => setIsCartOpen(true)}
-            className="fixed bottom-8 right-8 z-40 bg-brand-accent text-white px-6 py-4 rounded-2xl font-bold flex items-center gap-3 shadow-2xl shadow-brand-accent/40 hover-lift"
+            className="fixed bottom-5 right-5 left-5 sm:left-auto sm:bottom-8 sm:right-8 z-40 bg-brand-accent text-white px-5 sm:px-6 py-4 rounded-2xl font-bold flex items-center justify-center gap-3 shadow-2xl shadow-brand-accent/40 hover-lift"
           >
             <ShoppingCart className="w-6 h-6" />
             <span>Košík</span>
@@ -646,16 +646,16 @@ export default function App() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 bottom-0 w-full max-w-md z-[70] bg-brand-bg-lighter shadow-2xl flex flex-col"
+              className="fixed inset-x-0 bottom-0 max-h-[90svh] sm:inset-y-0 sm:left-auto sm:right-0 sm:max-h-none w-full sm:max-w-md z-[70] bg-brand-bg-lighter shadow-2xl flex flex-col rounded-t-3xl sm:rounded-none border-t sm:border-t-0 sm:border-l border-white/10"
             >
-              <div className="p-6 border-b border-white/5 flex items-center justify-between">
+              <div className="p-5 sm:p-6 border-b border-white/5 flex items-center justify-between">
                 <h3 className="text-3xl">KOŠÍK</h3>
                 <button onClick={() => setIsCartOpen(false)} className="p-2 hover:text-brand-accent transition-colors">
                   <X className="w-8 h-8" />
                 </button>
               </div>
 
-              <div className="flex-1 overflow-y-auto p-6 space-y-6">
+              <div className="flex-1 overflow-y-auto p-5 sm:p-6 space-y-5 sm:space-y-6">
                 {cart.length === 0 ? (
                   <div className="h-full flex flex-col items-center justify-center text-brand-text-muted gap-4">
                     <ShoppingCart className="w-16 h-16 opacity-20" />
@@ -683,10 +683,10 @@ export default function App() {
               </div>
 
               {cart.length > 0 && (
-                <div className="p-6 bg-brand-bg border-t border-white/5 space-y-6">
+                <div className="p-5 sm:p-6 bg-brand-bg border-t border-white/5 space-y-5 sm:space-y-6">
                   <div className="flex justify-between items-center">
                     <span className="text-brand-text-muted font-bold uppercase tracking-widest text-xs">Celkom</span>
-                    <span className="text-4xl font-display text-brand-gold">{cartTotal.toFixed(2)}€</span>
+                    <span className="text-3xl sm:text-4xl font-display text-brand-gold">{cartTotal.toFixed(2)}€</span>
                   </div>
 
                   <div className="space-y-3">
@@ -730,7 +730,7 @@ export default function App() {
                     </div>
                   )}
 
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     <button 
                       onClick={handleOrderWhatsApp}
                       className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe59] text-white py-4 rounded-xl font-bold transition-all"
