@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -16,10 +16,6 @@
 }
 
 @layer base {
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-
   html {
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -28,19 +24,35 @@
   body {
     @apply bg-brand-bg text-brand-text font-sans antialiased;
     overflow-x: hidden;
-    width: 100%;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: geometricPrecision;
   }
 
   #root {
     min-height: 100svh;
     overflow-x: hidden;
   }
-  
-  h1, h2, h3, h4, .font-display {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
     @apply font-display tracking-wide;
   }
 
-  img, video, iframe {
+  a,
+  button,
+  input,
+  textarea {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  img,
+  video,
+  canvas,
+  svg,
+  iframe {
     max-width: 100%;
   }
 }
@@ -48,23 +60,73 @@
 @utility container {
   margin-inline: auto;
   width: 100%;
+  max-width: 1280px;
   padding-inline: 1rem;
-  
+
   @media (min-width: 640px) {
     padding-inline: 1.5rem;
   }
-  
+
   @media (min-width: 1024px) {
-    max-width: 1280px;
     padding-inline: 3rem;
   }
 }
 
+@utility section {
+  padding-block: 3.5rem;
+
+  @media (min-width: 640px) {
+    padding-block: 5rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding-block: 6.5rem;
+  }
+}
+
+@utility section-kicker {
+  @apply mb-3 text-xs font-black uppercase tracking-[0.28em] text-brand-accent;
+}
+
+@utility section-title {
+  @apply max-w-4xl text-5xl leading-[0.95] text-white sm:text-6xl lg:text-7xl;
+}
+
+@utility card {
+  @apply rounded-[2rem] border border-white/10 bg-brand-bg-lighter p-5 shadow-xl shadow-black/10 transition-colors hover:border-brand-accent/30 sm:p-6;
+}
+
+@utility menu-card {
+  @apply grid gap-4 rounded-[2rem] border border-white/10 bg-brand-bg p-5 shadow-xl shadow-black/10 transition-colors hover:border-brand-accent/30 sm:grid-cols-[1fr_auto] sm:p-6;
+}
+
+@utility input {
+  @apply w-full rounded-2xl border border-white/10 bg-brand-bg-lighter px-4 py-3.5 text-base text-brand-text outline-none transition-colors placeholder:text-brand-text-muted/70 focus:border-brand-accent;
+}
+
+@utility scrollbar-hide {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 .glass {
-  @apply bg-brand-bg-lighter/80 backdrop-blur-md border border-white/10;
+  @apply border border-white/10 bg-brand-bg-lighter/85 backdrop-blur-xl;
 }
 
 .hover-lift {
   @apply transition-transform duration-300 hover:-translate-y-1;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}
