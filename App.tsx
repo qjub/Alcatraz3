@@ -281,12 +281,12 @@ export default function App() {
       <nav
         className={cn(
           "fixed left-0 right-0 top-0 z-50 transition-all duration-300",
-          isScrolled ? "bg-brand-bg/90 shadow-xl backdrop-blur-xl border-b border-white/10" : "bg-gradient-to-b from-black/70 to-transparent"
+          isScrolled ? "bg-brand-bg/92 shadow-xl backdrop-blur-xl border-b border-white/10" : "bg-brand-bg/82 backdrop-blur-xl border-b border-white/5"
         )}
       >
-        <div className="container flex h-20 items-center justify-between gap-4 sm:h-24">
+        <div className="container flex h-16 items-center justify-between gap-3 sm:h-20">
           <a href="#" className="flex items-center gap-3 shrink-0" aria-label="Alcatraz domov">
-            <img src="logo.png" alt="Alcatraz Pizza and Burgers" className="h-14 w-auto sm:h-16" />
+            <img src="logo.png" alt="Alcatraz Pizza and Burgers" className="h-11 w-auto sm:h-14" />
             <span className="hidden font-display text-3xl tracking-wider text-white sm:block">ALCATRAZ</span>
           </a>
 
@@ -306,7 +306,7 @@ export default function App() {
             <button
               type="button"
               onClick={() => setIsCartOpen(true)}
-              className="relative flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-white transition-colors hover:border-brand-accent/40 hover:text-brand-accent"
+              className="relative flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white transition-colors hover:border-brand-accent/40 hover:text-brand-accent sm:h-11 sm:w-11 sm:rounded-2xl"
               aria-label="Otvoriť košík"
             >
               <ShoppingCart className="h-5 w-5" />
@@ -328,7 +328,7 @@ export default function App() {
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen((v) => !v)}
-              className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-white md:hidden"
+              className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white sm:h-11 sm:w-11 sm:rounded-2xl md:hidden"
               aria-label="Menu"
             >
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <MenuIcon className="h-6 w-6" />}
@@ -343,7 +343,7 @@ export default function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-brand-bg/95 px-5 pt-28 backdrop-blur-xl md:hidden"
+            className="fixed inset-0 z-40 bg-brand-bg/96 px-4 pt-24 backdrop-blur-xl md:hidden"
           >
             <div className="mx-auto flex max-w-sm flex-col gap-3">
               {navItems.map((item) => (
@@ -368,44 +368,46 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      <header className="relative min-h-[92svh] overflow-hidden pt-28 sm:pt-32 lg:min-h-screen lg:pt-36">
+      <header className="relative overflow-hidden pt-24 pb-12 sm:pt-32 sm:pb-16 lg:min-h-screen lg:pt-36">
         <div className="absolute inset-0 -z-10">
           <img src="hero_pozadie.webp" alt="Burger Alcatraz" className="h-full w-full object-cover object-[62%_center] opacity-45 sm:opacity-55" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_45%,rgba(178,201,193,0.16),transparent_34%),linear-gradient(90deg,rgba(26,26,26,0.98),rgba(26,26,26,0.80)_42%,rgba(26,26,26,0.54)),linear-gradient(180deg,rgba(26,26,26,0.35),#1a1a1a_96%)]" />
         </div>
 
-        <div className="container grid min-h-[calc(92svh-7rem)] items-center pb-10 lg:grid-cols-[1.05fr_0.95fr] lg:pb-20">
+        <div className="container flex min-h-[calc(100svh-8.5rem)] items-center pb-4 sm:min-h-[calc(92svh-8rem)] lg:grid lg:grid-cols-[1.05fr_0.95fr] lg:pb-20">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55 }}
-            className="max-w-2xl"
+            className="w-full max-w-2xl"
           >
-            <div className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full border border-brand-gold/25 bg-brand-bg-lighter/65 px-4 py-2 text-[11px] font-black uppercase tracking-[0.18em] text-brand-gold backdrop-blur sm:text-xs">
+            <div className="mb-4 inline-flex max-w-full items-center gap-2 rounded-full border border-brand-gold/25 bg-brand-bg-lighter/70 px-3.5 py-2 text-[10px] font-black uppercase tracking-[0.14em] text-brand-gold backdrop-blur sm:mb-5 sm:px-4 sm:text-xs sm:tracking-[0.18em]">
               <Star className="h-3.5 w-3.5 fill-brand-gold" />
               Trenčín — Východná ulica
             </div>
 
-            <p className="mb-3 text-xs font-black uppercase tracking-[0.32em] text-brand-accent sm:text-sm">Pizza & Burgers</p>
-            <h1 className="max-w-[11ch] font-display text-[clamp(3.45rem,16vw,5rem)] leading-[0.86] tracking-wide text-white sm:max-w-[12ch] sm:text-[clamp(5rem,10vw,8.4rem)] lg:max-w-[10.5ch]">
-              POCTIVÉ <span className="text-brand-accent">BURGRE</span> & TALIANSKA PIZZA
+            <p className="mb-3 text-[11px] font-black uppercase tracking-[0.22em] text-brand-accent sm:text-sm sm:tracking-[0.32em]">Pizza & Burgers</p>
+            <h1 className="max-w-[10.5ch] font-display text-[clamp(2.85rem,13.2vw,4.35rem)] leading-[0.9] tracking-wide text-white sm:max-w-[12ch] sm:text-[clamp(5rem,10vw,8.4rem)] sm:leading-[0.86] lg:max-w-[10.5ch]">
+              <span className="block">POCTIVÉ <span className="text-brand-accent">BURGRE</span></span>
+              <span className="block">& TALIANSKA</span>
+              <span className="block">PIZZA</span>
             </h1>
 
-            <p className="mt-6 max-w-xl text-base leading-8 text-brand-text-muted sm:text-lg">
+            <p className="mt-5 max-w-[34rem] text-[15px] leading-7 text-brand-text-muted sm:mt-6 sm:text-lg sm:leading-8">
               Smash burgre z čerstvého hovädzieho, pizza z vlastného cesta a šaláty. Na sídlisku Juh s parkovaním pri dverách.
             </p>
 
-            <div className="mt-8 flex w-full max-w-sm flex-col gap-3 sm:max-w-none sm:flex-row">
-              <a href="#menu" className="inline-flex min-h-14 items-center justify-center rounded-2xl bg-brand-accent px-6 py-4 text-base font-black text-brand-bg shadow-xl shadow-brand-accent/15 transition-colors hover:bg-brand-accent-hover">
+            <div className="mt-7 flex w-full flex-col gap-3 sm:mt-8 sm:max-w-none sm:flex-row">
+              <a href="#menu" className="inline-flex min-h-[3.25rem] w-full items-center justify-center rounded-2xl bg-brand-accent px-5 py-4 text-base font-black text-brand-bg shadow-xl shadow-brand-accent/15 transition-colors hover:bg-brand-accent-hover sm:w-auto sm:min-h-14 sm:px-6">
                 Pozrieť menu
                 <ChevronRight className="ml-2 h-5 w-5" />
               </a>
-              <a href="tel:+421902669123" className="inline-flex min-h-14 items-center justify-center rounded-2xl border border-white/15 bg-white/[0.03] px-6 py-4 text-base font-black text-white backdrop-blur transition-colors hover:border-brand-gold/50 hover:text-brand-gold">
+              <a href="tel:+421902669123" className="inline-flex min-h-[3.25rem] w-full items-center justify-center rounded-2xl border border-white/15 bg-white/[0.03] px-5 py-4 text-base font-black text-white backdrop-blur transition-colors hover:border-brand-gold/50 hover:text-brand-gold sm:w-auto sm:min-h-14 sm:px-6">
                 Objednať telefonicky
               </a>
             </div>
 
-            <div className="mt-8 grid max-w-md grid-cols-1 gap-3 text-sm text-brand-text-muted sm:grid-cols-2">
+            <div className="mt-7 grid max-w-md grid-cols-1 gap-3 text-[13px] text-brand-text-muted sm:mt-8 sm:grid-cols-2 sm:text-sm">
               <div className="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3">
                 <Clock className="h-4 w-4 text-brand-accent" />
                 Po – So: 12:00 – 22:00
@@ -419,7 +421,7 @@ export default function App() {
         </div>
       </header>
 
-      <div className="sticky top-20 z-30 border-y border-white/10 bg-brand-bg/90 backdrop-blur-xl md:hidden">
+      <div className="hidden">
         <div className="container grid grid-cols-3 gap-2 py-3 text-xs font-black uppercase tracking-[0.12em]">
           <a href="tel:+421902669123" className="rounded-2xl border border-white/10 px-3 py-3 text-center text-brand-text">Zavolať</a>
           <button type="button" onClick={() => setIsCartOpen(true)} className="rounded-2xl bg-brand-accent px-3 py-3 text-center text-brand-bg">Košík {cartCount > 0 ? `(${cartCount})` : ""}</button>
@@ -464,9 +466,9 @@ export default function App() {
             </div>
 
             {comboInfo && (
-              <div className="rounded-[2rem] border border-brand-gold/20 bg-brand-bg-lighter p-5 text-left lg:min-w-80">
+              <div className="rounded-[1.5rem] border border-brand-gold/20 bg-brand-bg-lighter p-5 text-left sm:rounded-[2rem] lg:min-w-80">
                 <div className="text-[11px] font-black uppercase tracking-[0.25em] text-brand-text-muted">Cena</div>
-                <div className="mt-1 font-display text-6xl leading-none text-brand-gold">{comboInfo.cena}</div>
+                <div className="mt-1 font-display text-5xl leading-none text-brand-gold sm:text-6xl">{comboInfo.cena}</div>
                 <div className="mt-4 flex items-center gap-2 text-sm font-semibold text-brand-text-muted">
                   <Clock className="h-4 w-4" />
                   {comboInfo.cas}
@@ -522,14 +524,14 @@ export default function App() {
             <p className="mt-4 text-brand-text-muted">Všetky burgre podávame s domácimi hranolkami. Alergény sú označené číslami pri každej položke.</p>
           </div>
 
-          <div className="scrollbar-hide -mx-4 mb-7 flex gap-3 overflow-x-auto px-4 pb-2 sm:mx-0 sm:flex-wrap sm:px-0">
+          <div className="mb-7 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 type="button"
                 onClick={() => setActiveCategory(cat.id)}
                 className={cn(
-                  "shrink-0 rounded-2xl border px-5 py-3 text-sm font-black uppercase tracking-[0.13em] transition-colors",
+                  "min-h-12 rounded-2xl border px-3 py-3 text-center text-[12px] font-black uppercase tracking-[0.11em] transition-colors sm:px-5 sm:text-sm sm:tracking-[0.13em]",
                   activeCategory === cat.id
                     ? "border-brand-accent bg-brand-accent text-brand-bg"
                     : "border-white/10 bg-brand-bg text-brand-text-muted hover:text-white"
@@ -698,7 +700,7 @@ export default function App() {
               animate={{ y: 0, x: 0 }}
               exit={{ y: "100%", x: 0 }}
               transition={{ type: "spring", damping: 28, stiffness: 260 }}
-              className="fixed inset-x-0 bottom-0 z-[70] flex max-h-[90svh] flex-col rounded-t-[2rem] border-t border-white/10 bg-brand-bg-lighter shadow-2xl md:inset-x-auto md:bottom-0 md:right-0 md:top-0 md:h-full md:max-h-none md:w-full md:max-w-md md:rounded-none md:border-l md:border-t-0"
+              className="fixed inset-x-0 bottom-0 z-[70] flex max-h-[94svh] flex-col rounded-t-[1.5rem] border-t border-white/10 bg-brand-bg-lighter shadow-2xl sm:rounded-t-[2rem] md:inset-x-auto md:bottom-0 md:right-0 md:top-0 md:h-full md:max-h-none md:w-full md:max-w-md md:rounded-none md:border-l md:border-t-0"
             >
               <div className="flex items-center justify-between border-b border-white/10 p-5 sm:p-6">
                 <div>
